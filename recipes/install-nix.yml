@@ -1,0 +1,15 @@
+modules:
+  - type: script
+    snippets:
+      - "mkdir -p /var/nix"
+      - "chmod 0755 /var/nix"
+
+  - type: systemd
+    system:
+      enabled:
+        - nix.mount
+
+  - type: dnf
+    install:
+      packages:
+        - nix
