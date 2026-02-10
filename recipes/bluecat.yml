@@ -11,8 +11,8 @@ modules:
         destination: /
 
   - type: script
-    snippets:
-      - rm -rf /usr/share/backgrounds/gnome/
+    scripts:
+      - remove-default-backgrounds.sh
 
   - type: bling
     install:
