@@ -1,6 +1,6 @@
 # BlueCat &nbsp; [![bluebuild build badge](https://github.com/PolyCatDev/bluecat/actions/workflows/build.yml/badge.svg)](https://github.com/PolyCatDev/bluecat/actions/workflows/build.yml)
 
-An opinionated tweaked [ublue](https://universal-blue.org/) image based on [silverblue-main](https://github.com/ublue-os/main/pkgs/container/silverblue-main).
+An opinionated tweaked [ublue](https://universal-blue.org/) image based on [silverblue-nvidia](https://github.com/ublue-os/main/pkgs/container/silverblue-nvidia).
 
 ![Desktop Preview Image](https://raw.githubusercontent.com/PolyCatDev/bluecat/refs/heads/main/.github/preview.png)
 
