@@ -16,15 +16,10 @@ modules:
       - source: system
         destination: /
 
-  - type: bling
-    install:
-      - rpmfusion
-
-  - from-file: install-akmods.yml
-
-  #  - type: script
-  #    scripts:
-  #      - install-otd.sh
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - Hack
 
   - type: gnome-extensions
     install:
@@ -32,22 +27,14 @@ modules:
       - 517 # Caffeine
       - 3193 # Blur my Shell
 
-  - type: fonts
-    fonts:
-      nerd-fonts:
-        - Hack
-
-  - type: brew
-    brew-analytics: false
-    auto-update: false
-    auto-upgrade: false
-    nofile-limits: true
+  - type: bling
+    install:
+      - rpmfusion
 
   - type: dnf
     repos:
       files:
         - https://download.docker.com/linux/fedora/docker-ce.repo
-#        - codium.repo
       copr:
         - pgdev/ghostty
     install:
@@ -108,17 +95,7 @@ modules:
       - "sed -i 's/^Terminal=true/Terminal=false/' /usr/share/applications/nvim.desktop"
       - "sed -i 's|^Exec=.*|Exec=/usr/bin/ghostty -e nvim %F|' /usr/share/applications/nvim.desktop"
 
-  - type: default-flatpaks
-    configurations:
-      - notify: false
-        scope: user
-        install:
-          - com.mattjakeman.ExtensionManager
-          - org.gnome.Calendar
-          - com.github.tchx84.Flatseal
-          - it.mijorus.gearlever
-          - io.missioncenter.MissionCenter
-          - org.gnome.Papers
+  - from-file: install-akmods.yml
 
   - type: systemd
     system:
@@ -133,5 +110,24 @@ modules:
     user:
       disabled:
         - flatpak-user-update.timer
+
+  - type: default-flatpaks
+    configurations:
+      - notify: false
+        scope: user
+        install:
+          - com.mattjakeman.ExtensionManager
+          - org.gnome.Calendar
+          - com.github.tchx84.Flatseal
+          - it.mijorus.gearlever
+          - io.missioncenter.MissionCenter
+          - org.gnome.Papers
+
+  - type: brew
+    brew-analytics: false
+    auto-update: false
+    auto-upgrade: false
+    nofile-limits: true
+
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
