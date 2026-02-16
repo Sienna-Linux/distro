@@ -1,4 +1,4 @@
-name: bluecat
+name: distro
 description: uBlue imaged tweaked by PolyCat with nvidia drivers
 
 base-image: ghcr.io/ublue-os/silverblue-nvidia
