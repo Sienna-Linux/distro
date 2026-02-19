@@ -1,7 +1,7 @@
 name: distro
 description: uBlue imaged tweaked by PolyCat with nvidia drivers
 
-base-image: ghcr.io/ublue-os/silverblue-nvidia
+base-image: ghcr.io/ublue-os/silverblue-main
 image-version: latest
 
 modules:
@@ -41,6 +41,13 @@ modules:
         - pgdev/ghostty
     install:
       packages:
+        # System Packages
+        - nvidia-driver
+        - nvidia-driver-cuda
+        - nautilus-python
+        - adw-gtk3-theme
+
+        # User Apps
         - loupe
         - celluloid
         - gnome-tweaks
@@ -65,14 +72,6 @@ modules:
         - docker-ce-cli
         - containerd.io
         - docker-compose-plugin
-
-        # Themes
-        - adw-gtk3-theme
-
-        # Deps
-        - nautilus-python
-        - openssl
-        - libxcrypt-compat
 
     remove:
       auto-remove: true
